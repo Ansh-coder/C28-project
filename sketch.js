@@ -1,3 +1,4 @@
+
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -26,25 +27,25 @@ function setup() {
 	mango4=new mango(1000,70,30);
 	mango5=new mango(1100,70,30);
 	mango6=new mango(1000,230,30);
-	mango7=new mango(900,230,25);
-	mango8=new mango(1140,150,25);
-	mango9=new mango(1100,230,25);
-	mango10=new mango(1200,200,25);
-	mango11=new mango(1120,50,25);
-	mango12=new mango(900,160,25);
+	mango7=new mango(900,230,40);
+	mango8=new mango(1140,150,40);
+	mango9=new mango(1100,230,40);
+	mango10=new mango(1200,200,40);
+	mango11=new mango(1120,50,40);
+	mango12=new mango(900,160,40);
 
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
 	launcherObject=new launcher(stoneObj.body,{x:235,y:420})
-  // var render = Render.create({
-  //   element: document.body,
-  //   engine: engine,
-  //   options: {
-  //     width: 1300,
-  //     height: 600,
-  //     wireframes: false
-  //   }
-  // });
+  var render = Render.create({
+    element: document.body,
+    engine: engine,
+    options: {
+      width: 1300,
+      height: 600,
+      wireframes: false
+    }
+  });
 	
 	Engine.run(engine);
  // Render.run(render);
@@ -96,7 +97,6 @@ function mouseDragged()
 {
 	Matter.Body.setPosition(stoneObj.body, {x:mouseX, y:mouseY}) 
 }
-
 
 function mouseReleased()
 {
